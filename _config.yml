@@ -15,8 +15,8 @@
 minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Site Title"
+locale                   : "ko-KR"
+title                    : "rim's recore"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Arim Lee"
