@@ -1,7 +1,7 @@
 ---
 title: "Kaggle Project"
 permalink: /categories/Kaggle/
-layout: category
+layout: archive
 author_profile: true
 taxonomy: Kaggle
 ---
