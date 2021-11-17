@@ -91,14 +91,14 @@ last_motified_at:
 # 2. 풀이
 최고 순위와 최저 순위를 구하기 위해 일치하는 번호 개수의 min, max를 먼저 구한다. 0으로 표시한 숫자가 모두 틀린다는 가정하에 로또 번호 중 당첨 번호와 일치하는 개수가 min이 되고, 최고 순위는 0으로 표시한 숫자가 모두 맞는다는 가정이기 때문에 여기에 0의 개수를 더해주면 max가 된다. 따라서 구해야할 값은 다음과 같다.
 
-> 1. 일치하는 숫자 개수
+1. 일치하는 숫자 개수
 2. 0의 개수
 
-우선 0의 개수는 <mark style='background-color: #f1f8ff'>리스트 내장 함수 count</mark>를 사용하여 간단하게 구할 수 있다. `list.count(x)`의 형태로 사용하며 해당 리스트에 포함된 x의 개수를 구하여 리턴한다.
+우선 0의 개수는 <mark style='background-color: #E5F0FD'>리스트 내장 함수 count</mark>를 사용하여 간단하게 구할 수 있다. `list.count(x)`의 형태로 사용하며 해당 리스트에 포함된 x의 개수를 구하여 리턴한다.
 
-일치하는 숫자 개수는 단순하게 생각하면 if문을 사용하여 하나하나 비교할 수 있지만, 더 <mark style='background-color: #f1f8ff'>간단한 방법은 set의 교집합</mark>으로 구하는 것입니다. 주어진 리스트를 set으로 변환한 후 `intersection`를 사용하여 교집합을 구하고 `len()`함수로 개수를 구한다.
+일치하는 숫자 개수는 단순하게 생각하면 if문을 사용하여 하나하나 비교할 수 있지만, 더 <mark style='background-color: #E5F0FD'>간단한 방법은 set의 교집합</mark>으로 구하는 것입니다. 주어진 리스트를 set으로 변환한 후 `intersection`를 사용하여 교집합을 구하고 `len()`함수로 개수를 구한다.
 
-마지막으로, <mark style='background-color: #f1f8ff'>일치하는 번호 개수를 순위로 바꾸는 방법으로는 딕셔너리</mark>를 사용했다. key,value가 개수,순위로 구성된 딕셔너리를 만들어 인덱싱한다.
+마지막으로, <mark style='background-color: #E5F0FD'>일치하는 번호 개수를 순위로 바꾸는 방법으로는 딕셔너리</mark>를 사용했다. key,value가 개수,순위로 구성된 딕셔너리를 만들어 인덱싱한다.
 
 ## 코드1 ❌
 ```py
@@ -112,7 +112,7 @@ def solution(lottos, win_nums):
 ```
 처음에는 순위를 7 - 일치 개수로 구하고, 0~1개 일치가 모두 6등이므로 그 부분을 if문으로 처리해주었는데 정확성 테스트에서 1개를 통과하지 못했다.
 
-## 코드2</mark>
+## 코드2
 ```py
 def solution(lottos, win_nums):
     rank_dict = {0:6, 1:6, 2:5, 3:4, 4:3, 5:2, 6:1}
@@ -126,4 +126,4 @@ def solution(lottos, win_nums):
 <br/>
 
 
-[사용한 Code](https://github.com/rim-i/algorithms/blob/main/%5BLv.1%5D%20%EB%A1%9C%EB%98%90%EC%9D%98%20%EC%B5%9C%EA%B3%A0%20%EC%88%9C%EC%9C%84%EC%99%80%20%EC%B5%9C%EC%A0%80%20%EC%88%9C%EC%9C%84.ipynb)
+[<span style='color: #8DB3E1'>사용한 Code</span>](https://github.com/rim-i/algorithms/blob/main/%5BLv.1%5D%20%EB%A1%9C%EB%98%90%EC%9D%98%20%EC%B5%9C%EA%B3%A0%20%EC%88%9C%EC%9C%84%EC%99%80%20%EC%B5%9C%EC%A0%80%20%EC%88%9C%EC%9C%84.ipynb)
