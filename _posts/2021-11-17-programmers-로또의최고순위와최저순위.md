@@ -94,11 +94,11 @@ last_motified_at:
 > 1. 일치하는 숫자 개수
 2. 0의 개수
 
-우선 0의 개수는 <mark style='background-color: #140f07'>리스트 내장 함수 count</mark>를 사용하여 간단하게 구할 수 있다. `list.count(x)`의 형태로 사용하며 해당 리스트에 포함된 x의 개수를 구하여 리턴한다.
+우선 0의 개수는 <mark style='background-color: #f1f8ff'>리스트 내장 함수 count</mark>를 사용하여 간단하게 구할 수 있다. `list.count(x)`의 형태로 사용하며 해당 리스트에 포함된 x의 개수를 구하여 리턴한다.
 
-일치하는 숫자 개수는 단순하게 생각하면 if문을 사용하여 하나하나 비교할 수 있지만, 더 <mark style='background-color: #140f07'>간단한 방법은 set의 교집합</mark>으로 구하는 것입니다. 주어진 리스트를 set으로 변환한 후 `intersection`를 사용하여 교집합을 구하고 `len()`함수로 개수를 구한다.
+일치하는 숫자 개수는 단순하게 생각하면 if문을 사용하여 하나하나 비교할 수 있지만, 더 <mark style='background-color: #f1f8ff'>간단한 방법은 set의 교집합</mark>으로 구하는 것입니다. 주어진 리스트를 set으로 변환한 후 `intersection`를 사용하여 교집합을 구하고 `len()`함수로 개수를 구한다.
 
-마지막으로, <mark style='background-color: #140f07'>일치하는 번호 개수를 순위로 바꾸는 방법으로는 딕셔너리</mark>를 사용했다. key,value가 개수,순위로 구성된 딕셔너리를 만들어 인덱싱한다.
+마지막으로, <mark style='background-color: #f1f8ff'>일치하는 번호 개수를 순위로 바꾸는 방법으로는 딕셔너리</mark>를 사용했다. key,value가 개수,순위로 구성된 딕셔너리를 만들어 인덱싱한다.
 
 ## 코드1 ❌
 ```py
