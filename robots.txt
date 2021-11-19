@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rim-i.github.io/sitemap.xml
