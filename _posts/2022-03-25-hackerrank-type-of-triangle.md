@@ -29,7 +29,7 @@ Write a query identifying the type of each record in the **TRIANGLES** table usi
 
 The **TRIANGLES** table is described as follows:
 
-![image](https://user-images.githubusercontent.com/85720248/160077784-10c1b01b-b042-43e2-9ec2-cf39073f1928.png){: .align-left}
+![image](https://user-images.githubusercontent.com/85720248/160077784-10c1b01b-b042-43e2-9ec2-cf39073f1928.png)
 
 <br/>
 
@@ -50,7 +50,7 @@ IF문을 사용하여 정삼각형, 이등변삼각형, 삼각형, 삼각형이 
 
 ## MySQL 조건문
 ### 1. IF
-```MySQL
+```SQL
 IF(조건문, 참일 때 값, 거짓일 때 값)
 ```
 엑셀의 IF()함수와 같다. 조건이 여러개일 때 중첩해서 사용이 가능하지만, 코드가 지저분해지기 때문에 아래의 CASE문을 사용하는 것이 좋다.
@@ -67,7 +67,7 @@ END
 WHEN ~ THEN은 여러 번 사용할 수 있으며, 마지막의 ELSE는 모든 조건이 아닐 때를 지정한다.
 
 # Answer
-```MySQL
+```SQL
 SELECT  CASE
             WHEN (A + B <= C) OR (A + C <= B) OR (B + C <= A) THEN 'Not A Triangle'
             WHEN A = B AND B = C THEN 'Equilateral'
@@ -77,6 +77,9 @@ SELECT  CASE
 FROM    Triangles;
 ```
 첫번째 WHEN에서 삼각형이 아닌 것들이 참이 되어 **Not A Triangle**이 출력된다.
+
 두번째 WHEN에서 A = B이고 B = C인 것, 즉 A = B = C인 정삼각형이면 참이 되어 **Not A Equilateral**이 출력된다.
+
 세번째 WHEN에서 두 변의 길이는 같지만 나머지 한변의 길이는 다른 이등변 삼각형이면 참이 되어 **Isosceles**이 출력된다.
+
 이 모든 조건에도 걸리지 않으면 그냥 삼각형 **Scalene**이다.
