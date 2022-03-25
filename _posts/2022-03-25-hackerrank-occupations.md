@@ -1,5 +1,5 @@
 ---
-title: "[MySQL][Hacker Rank] Type of Triangle"
+title: "[Hacker Rank][MySQL] Occupation"
 excerpt: "해커랭크 SQL - Advanced Select (Medium)"
 
 categories:
@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 toc_label:
 
-date: 2022-03-25
+date: 2022-03-26
 last_motified_at:
 ---
 <br/>
@@ -85,7 +85,8 @@ ORDER BY    name
 <br/>
 
 ## STEP2
-```SQL
+
+```sql
 SET @d:=0, @p:=0, @s:=0, @a:=0;
 
 SELECT  name, occupation,
@@ -106,7 +107,8 @@ ORDER BY    name
 <br/>
 
 ## STEP3
-```SQL
+
+```sql
 SET @d:=0, @p:=0, @s:=0, @a:=0;
 
 SELECT  MIN(CASE WHEN Occupation = 'Doctor' THEN name END),
@@ -125,16 +127,19 @@ GROUP BY t.num
 ```
 rownum을 기준으로 group by해서 직업별 이름을 출력한다.
 
-조건문을 사용해서 각 컬럼에 맞는 직업을 선택하고, group by를 사용한 경우 집계함수를 사용해야 하므로 `MIN()`을 사용했다.
+조건문을 사용해서 각 컬럼에 맞는 직업을 선택하고, group by를 사용한 경우 집계함수를 사용해야 하므로 `MIN()`을 사용한다.
 
-여기서 `MIN()`은 함수로 작은값을 구하기 위해서 사용하는 것이 아니라 출력을 위해 사용하는 것이다. 직업별로 rownum을 매겼기 때문에 rownum을 기준으로 그룹화하면 각 직업당 하나의 이름만 나온다. 따라서 `MIN()`나 `MAX()` 어떤 것을 사용해도 무방하다. 문자열에 MIN, MAX 함수를 사용하는 경우 알파벳 순으로 작은 것(앞에 있는 것), 큰 것(뒤에 있는 것)을 출력해준다.
+여기서 `MIN()`은 함수로 작은값을 구하기 위해서 사용하는 것이 아니라 출력을 위해 사용하는 것이다. 직업별로 rownum을 매겼기 때문에 rownum을 기준으로 그룹화하면 각 직업당 하나의 이름만 나온다. 따라서 `MIN()`나 `MAX()` 어떤 것을 사용해도 무방하다.
+
+문자열에 MIN, MAX 함수를 사용하는 경우 알파벳 순으로 작은 것(앞에 있는 것), 큰 것(뒤에 있는 것)을 출력해준다.
 
 <br/>
 <br/>
 
 
 # Answer
-```SQL
+
+```sql
 SET @d:=0, @p:=0, @s:=0, @a:=0;
 
 SELECT  MIN(CASE WHEN Occupation = 'Doctor' THEN name END),
@@ -151,4 +156,5 @@ FROM    (SELECT  name, occupation,
         ORDER BY    name) t
 GROUP BY t.num
 ```
+
 ![image](https://user-images.githubusercontent.com/85720248/160150410-dbab5172-c480-4e4f-a186-bfcd068dff4a.png)
