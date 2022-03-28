@@ -19,6 +19,7 @@ last_motified_at:
 
 # Problem
 Amber's conglomerate corporation just acquired some new companies. Each of the companies follows this hierarchy:
+
 ![image](https://user-images.githubusercontent.com/85720248/160339784-7eb995e6-ad64-492f-98a9-528ab23b7aab.png)
 
 Given the table schemas below, write a query to print the company_code, founder name, total number of lead managers, total number of senior managers, total number of managers, and total number of employees. Order your output by ascending company_code.
@@ -27,21 +28,29 @@ Given the table schemas below, write a query to print the company_code, founder 
 - The tables may contain duplicate records.
 - The company_code is string, so the sorting should not be numeric. For example, if the company_codes are C_1, C_2, and C_10, then the ascending company_codes will be C_1, C_10, and C_2.
 <br/>
+<br/>
+
 
 **Input Format**
+
 Company: The company_code is the code of the company and founder is the founder of the company.
+
 ![image](https://user-images.githubusercontent.com/85720248/160340048-54fe5383-247b-49fa-9d9c-e1b2e5134218.png)
 
 Lead_Manager: The lead_manager_code is the code of the lead manager, and the company_code is the code of the working company. 
+
 ![image](https://user-images.githubusercontent.com/85720248/160340119-7aaf1c42-e324-4e38-a868-7b99322e1d8a.png)
 
 Senior_Manager: The senior_manager_code is the code of the senior manager, the lead_manager_code is the code of its lead manager, and the company_code is the code of the working company.
+
 ![image](https://user-images.githubusercontent.com/85720248/160340185-5170c1ed-5c53-43bf-ad64-2b50ac77a512.png)
 
 Manager: The manager_code is the code of the manager, the senior_manager_code is the code of its senior manager, the lead_manager_code is the code of its lead manager, and the company_code is the code of the working company. 
+
 ![image](https://user-images.githubusercontent.com/85720248/160340255-b7d0147d-80c1-4e15-b327-0edd1972f2c9.png)
 
 Employee: The employee_code is the code of the employee, the manager_code is the code of its manager, the senior_manager_code is the code of its senior manager, the lead_manager_code is the code of its lead manager, and the company_code is the code of the working company. 
+
 ![image](https://user-images.githubusercontent.com/85720248/160340311-ed2c2b9c-aec2-46c5-8802-7b4a408915d1.png)
 
 
@@ -67,7 +76,9 @@ SELECT문에서 중복을 제거하기 위해 `DISTINCT`를 사용하여 정확�
 # Answer
 
 ```sql
-SELECT  C.company_code, C.founder, COUNT(DISTINCT lead_manager_code), COUNT(DISTINCT senior_manager_code), COUNT(DISTINCT manager_code), COUNT(DISTINCT employee_code)
+SELECT  C.company_code, C.founder, 
+		COUNT(DISTINCT E.lead_manager_code), COUNT(DISTINCT E.senior_manager_code),
+		COUNT(DISTINCT E.manager_code), COUNT(DISTINCT E.employee_code)
 FROM    Employee E LEFT OUTER JOIN Company C ON (E.company_code = C.company_code)
 GROUP BY    C.company_code, C.founder
 ORDER BY    C.company_code;
