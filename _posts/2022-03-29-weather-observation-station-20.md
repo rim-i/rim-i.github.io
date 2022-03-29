@@ -25,6 +25,7 @@ A median is defined as a number separating the higher half of a data set from th
 **Input Format**
 
 The STATION table is described as follows:
+
 ![image](https://user-images.githubusercontent.com/85720248/160548022-76d47e69-dfa4-4bea-b184-1e56befe9f28.png)
 
 
@@ -35,6 +36,7 @@ lat_n 컬럼의 중앙값을 구하는 문제이다. 소수점 네번째 자리�
 
 <br/>
 <br/>
+<br/>
 
 # Solution
 중앙값은 크기 순으로 나열했을 때 가장 중앙에 위치하는 값이다. 따라서 크기 순에 따라 행번호를 매겨야 한다.
@@ -42,6 +44,8 @@ lat_n 컬럼의 중앙값을 구하는 문제이다. 소수점 네번째 자리�
 전체 개수 n이 홀수인 경우에는 (n//2 + 1)번째 수, 짝수인 경우에는 (n/2)번째 수와 (n/2 +1)번째 수의 평균이 중앙값이 된다.
 
 예를 들어 10,20,30,40,50의 4개의 값이 있으면 3번째인 30이 중앙값이 된다. 10,20,30,40의 4개의 값이 있으면 2,3번째의 평균인 (20+30)/2=25가 중앙값이 된다.
+
+<br/>
 
 ## 행번호 컬럼 만들기
 
@@ -56,15 +60,20 @@ SELECT 전에 변수를 초기화해주지 않으면 값이 NULL인 상태이기
 
 `@rownum:= @rownum+ 1 AS no(별칭)`은 행을 불러올 때마다 1을 더해서 출력하라는 구문이다.
 
+<br/>
+
 ```sql
 SELECT  @rownum := @rownum + 1 AS rownum, S.lat_n
 FROM    Station S, (SELECT @rownum:=0) RNUM
 ORDER BY    S.lat_n
 ```
-![image](https://user-images.githubusercontent.com/85720248/160551943-d76100ec-8b34-44c9-89ea-14f980815c8b.png)
+![image](https://user-images.githubusercontent.com/85720248/160551943-d76100ec-8b34-44c9-89ea-14f980815c8b.png){: width="70%", height="70%"}
+
+Station 테이블에서 lat_n을 제외한 다른 컬럼은 필요하지 않으므로 lat_n만 선택해준다.
 
 lat_n 값을 기준으로 행번호가 잘 매겨진 것을 볼 수 있다.
 
+<br/>
 <br/>
 <br/>
 
