@@ -68,18 +68,6 @@ FROM	A
 ```
 이렇게 순서대로 여러번 LEFT JOIN 해주면 된다.
 
-<br/>
-
-```sql
-SELECT  @rownum := @rownum + 1 AS rownum, S.lat_n
-FROM    Station S, (SELECT @rownum:=0) RNUM
-ORDER BY    S.lat_n
-```
-![image](https://user-images.githubusercontent.com/85720248/160551943-d76100ec-8b34-44c9-89ea-14f980815c8b.png){: width="70%", height="70%"}
-
-Station 테이블에서 lat_n을 제외한 다른 컬럼은 필요하지 않으므로 lat_n만 선택해준다.
-
-lat_n 값을 기준으로 행번호가 잘 매겨진 것을 볼 수 있다.
 
 <br/>
 <br/>
