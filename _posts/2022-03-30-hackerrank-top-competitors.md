@@ -47,7 +47,7 @@ Submission 테이블의 score(해커가 받은 점수)와 Difficulty 테이블�
 
 테이블 간 연결되는 key 컬럼이다.
 
-[Submission]--challenge_id--[Challenges]--difficulty_level--[Difficulty]
+[**Submission**]----challenge_id----[**Challenges**]----difficulty_level----[**Difficulty**]
 
 Submission 기준으로 순서대로 LEFT JOIN을 해야 한다. 
 
@@ -62,9 +62,9 @@ Submission 기준으로 순서대로 LEFT JOIN을 해야 한다.
 SELECT	*
 FROM	A
         LEFT JOIN B
-        ON A.id = B.id
+        ON A.xx = B.xx
         LEFT JOIN C 
-        ON B.level = C.level
+        ON B.yy = C.yy
 ```
 이렇게 순서대로 여러번 LEFT JOIN 해주면 된다.
 
