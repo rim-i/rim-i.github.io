@@ -104,7 +104,7 @@ END WHILE
 <br/>
 
 ## Variables
-1. 사용자 정의 변수 (User-Defined Variables)
+**사용자 정의 변수 (User-Defined Variables)**
     - @로 시작
     - 한 클라이언트에서 정의한 사용자 변수는 다른 클라이언트에서 보거나 사용할 수 없음
     - 저장하는 값에 의해 자료형이 정해짐
@@ -122,7 +122,7 @@ END WHILE
 
 <br/>
 
-2. 지역 변수 (Local Variables)
+**지역 변수 (Local Variables)**
     - 저장 프로시저 내에서 사용
     - DECLARE로 먼저 선언 후 사용
     - 지역 변수의 범위는 BEGIN ~ END가 선언된 블록
