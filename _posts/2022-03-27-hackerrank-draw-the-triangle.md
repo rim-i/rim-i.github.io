@@ -39,6 +39,8 @@ Write a query to print the pattern P(20).
 <br/>
 <br/>
 
+---
+
 # Solution
 별의 개수를 하나씩 줄여 출력하는 것을 20회 반복해야 한다.
 
@@ -89,7 +91,7 @@ END WHILE
 <br/>
 <br/>
 
- ## information_schema
+## information_schema
 - MySQL 서버 내에 존재하는 DB의 메타 정보(테이블, 칼럼, 인덱스 등의 스키마 정보)를 모아둔 DB
 - 읽기 전용이며, 수정하거나 삭제할 수는 없음
 - 테이블 종류
@@ -141,6 +143,8 @@ END WHILE
 <br/>
 <br/>
 
+----
+
 # Answer (Draw the triangle 1)
 
 ## 1
@@ -189,6 +193,7 @@ WHERE   @num > 1;
 <br/>
 <br/>
 
+
 # Answer (Draw the triangle 2)
 반대로 별의 개수를 1부터 하나씩 증가하여 출력하는 문제
 
@@ -218,3 +223,7 @@ SELECT  REPEAT('* ', @num := @num + 1)
 FROM    information_schema.tables
 WHERE   @num < 20;
 ```
+
+<br/>
+<br/>
+<br/>
