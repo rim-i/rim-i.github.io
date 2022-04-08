@@ -101,6 +101,7 @@ contest 별 total_submissions, total_accepted_submissions, total_views, total_un
 <br/>
 
 **전체 ROW 수의 변화**
+
 LEFT OUTER JOIN 에서 기준이 되는 테이블의 행 수가 조인 후에도 그대로 일 것이라고 생각할 수 있지만, <span style="color:#CD3B3B">1:1 또는 N:1 관계를 갖는 경우에만 행 수가 그대로</span>이다.
 
 <span style="color:#CD3B3B">1:N 관계에서는 기준 테이블의 데이터가 중복되어 행 수가 뻥튀기</span> 된다.
