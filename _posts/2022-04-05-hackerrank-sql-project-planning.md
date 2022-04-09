@@ -55,6 +55,8 @@ Write a query to output the start and end dates of projects listed by the number
 3. `ROW_NUMBER()`를 사용하여 날짜 순으로 행번호를 매겨줌
 4. 행번호 기준으로 INNER JOIN
 
+<br/>
+
 ### 순위함수
 MySQL ver8 이상에서 사용 가능
 
@@ -77,6 +79,9 @@ RANK() OVER(PARTITION BY col_name1      -- 그룹별로 순위를 매기고 싶�
     - 그룹 내에서 랭킹이 매겨지는 것과, 그룹으로 묶여지는 것은 다름
 
 순위 함수로 만든 컬럼을 WHERE 조건에서 사용하고 싶다면, 서브 쿼리를 이용해 먼저 순위 함수 컬럼을 뽑고 메인 쿼리에서 필터링 해야 함
+
+<br/>
+<br/>
 
 # 2
 같은 프로젝트에서 시작일과 종료일이 이어진다. 즉, 첫번째 업무의 종료일과 두번째 업무의 시작일이 같다.
