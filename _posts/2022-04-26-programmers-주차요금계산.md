@@ -228,11 +228,11 @@ a = sorted(a)  # 정렬된 리스트 반환
 
 2차원 리스트에서 특정 값 기준으로 정렬하고 싶은 경우
 
-    ```py
-    arr.sort(key=lambda x:x[0])  # 첫번째 값 기준
-    arr.sort(key=lambda x:x[1])  # 두번째 값 기준
-    arr.sort(key=lambda x:(x[0], -x[2]))  # 첫번째 값 기준으로 오름차순 정렬, 세번째 값 기준으로 내림차순 정렬
-    ```
+```py
+arr.sort(key=lambda x:x[0])  # 첫번째 값 기준
+arr.sort(key=lambda x:x[1])  # 두번째 값 기준
+arr.sort(key=lambda x:(x[0], -x[2]))  # 첫번째 값 기준으로 오름차순 정렬, 세번째 값 기준으로 내림차순 정렬
+```
 
 <br/>
 <br/>
