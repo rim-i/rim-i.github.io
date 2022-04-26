@@ -126,24 +126,25 @@ last_motified_at:
 
 
 # 2. Solution
-1. records 배열의 시각, 차량번호, 내역 문자열 분리 → 2차원 리스트
+1. <mark style='background-color: #E5F0FD'>records 배열의 시각, 차량번호, 내역 문자열 분리</mark> → 2차원 리스트
     - 다음 단계에서 주차 시간을 계산하기 위해 시간:분 형식에서 분 단위 시간으로 변경
-    - 차량번호, 시간 순으로 정렬
+    - <mark style='background-color: #E5F0FD'>차량번호, 시간 순으로 정렬</mark>
     
     <br/>
 
 2. 누적 주차 시간 구하기
-    - 같은 차량이 여러번 이용 가능하므로 차량번호 순으로 정렬된 2중 리스트를 활용함
+    - 같은 차량이 여러번 이용 가능하므로 <mark style='background-color: #E5F0FD'>차량번호 순으로 정렬된 2차원 리스트</mark>를 활용함
         - 처음엔 {차량번호:시각}으로 구성된 IN, out 딕셔너리를 각각 만들어야겠다 생각했으나, 중복 이용 차량을 따로 저장할 수 없는 문제
-    - IN, OUT에 대한 정보가 각각 리스트의 다른 원소로 저장되어 있고, 이용 시간을 구하기 위해서는 두 정보를 한번에 가져와야 하므로 for문이 아닌 while문을 사용
+    - IN, OUT에 대한 정보가 각각 리스트의 다른 원소로 저장되어 있고, 이용 시간을 구하기 위해서는 두 정보를 한번에 가져와야 하므로 <mark style='background-color: #E5F0FD'>for문이 아닌 while문을 사용</mark>
         - i를 인덱스 변수로 사용
         - IN, OUT에 대한 정보가 모두 있는 경우는 +2, in만 있는 경우는 +1
-    - 인덱스 i의 차량 번호와 다음 인덱스의 차량 번호가 같다면 IN, OUT의 한 세트 → 각 인덱스에서 입고 시각, 출고 시각 가져옴
-    같지 않다면 OUT 기록 없음 → 입고 시각만 가져오고 출고 시각은 23:59
+    - <mark style='background-color: #E5F0FD'>인덱스 i의 차량 번호와 다음 인덱스의 차량 번호가 같다면 IN, OUT의 한 세트</mark> → 각 인덱스에서 입고 시각, 출고 시각 가져옴
+
+        <mark style='background-color: #E5F0FD'>같지 않다면 OUT 기록 없음</mark> → 입고 시각만 가져오고 출고 시각은 23:59
         - 주차장에 이미 있는 차량(차량번호가 같은 차량)이 다시 입차되는 경우는 없다고 했으므로 IN, OUT을 따로 판단할 필요 x
         - 즉, OUT된 기록 없이 같은 차량이 다시 IN 하지 않는다는 말이므로 OUT기록이 없는 것은 마지막 IN에 대해서만 발생
-    - 마지막 인덱스가 IN인 경우 다음 인덱스를 가져와 차량번호가 같은지 판단하는 조건문에서 인덱스 에러가 발생함 → 먼저 마지막 인덱스인지 조건문으로 확인
-    - 누적 주차 시간 계산
+    - <mark style='background-color: #E5F0FD'>마지막 인덱스가 IN인 경우</mark> 다음 인덱스를 가져와 차량번호가 같은지 판단하는 조건문에서 <mark style='background-color: #E5F0FD'>인덱스 에러</mark>가 발생함 → 먼저 마지막 인덱스인지 조건문으로 확인
+    - <mark style='background-color: #E5F0FD'>누적 주차 시간 계산</mark>
         - `딕셔너리.get(x, 'default value')`
             - x라는 Key에 대응되는 Value를 돌려줌
             - 해당 key가 존재하지 않는 경우, `딕셔너리[x]` 는 오류를 발생시키지만 get함수는 None을 돌려줌
@@ -219,6 +220,9 @@ a = sorted(a)  # 정렬된 리스트 반환
     - 정렬 기준이 복수 개일 경우, 튜플로 묶어서 사용
     - `-` 를 붙이면, 현재 정렬차순과 반대
 - `reverse` : True면 내림차순 (default = False)
+
+<br/>
+<br/>
 
 **List**
 
