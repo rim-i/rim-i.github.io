@@ -38,6 +38,7 @@ last_motified_at:
     - **내역** : IN은 입차, OUT은 출차
     - 입차된 후에 출차된 내역이 없다면, 23:59에 출차된 것으로 간주
 
+<br/>
 
 <details>
 <summary>문제 원본</summary>
@@ -128,7 +129,8 @@ last_motified_at:
 1. records 배열의 시각, 차량번호, 내역 문자열 분리 → 2차원 리스트
     - 다음 단계에서 주차 시간을 계산하기 위해 시간:분 형식에서 분 단위 시간으로 변경
     - 차량번호, 시간 순으로 정렬
-<br/>
+    
+    <br/>
 
 2. 누적 주차 시간 구하기
     - 같은 차량이 여러번 이용 가능하므로 차량번호 순으로 정렬된 2중 리스트를 활용함
@@ -146,7 +148,8 @@ last_motified_at:
             - x라는 Key에 대응되는 Value를 돌려줌
             - 해당 key가 존재하지 않는 경우, `딕셔너리[x]` 는 오류를 발생시키지만 get함수는 None을 돌려줌
             - key 값이 없을 경우 미리 정해 둔 디폴트 값을 가져오게 할 수 있음
-<br/>
+    
+    <br/>
 
 3. 주차 요금 계산
     - 기본 시간 이하인 경우 : 기본 요금
@@ -160,7 +163,7 @@ last_motified_at:
 
 
 
-## 코드
+## Code
 ```py
 import math
 def solution(fees, records):
@@ -238,8 +241,8 @@ a = sorted(a)  # 정렬된 리스트 반환
     sorted(d.items())  # (key,value) 리스트 반환
     dict(sorted(d.items()))  # 딕셔너리 반환
     ```
-
-<br/>
+    
+    <br/>
 
 2. value 기준 정렬
 
