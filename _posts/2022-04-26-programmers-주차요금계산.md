@@ -43,7 +43,8 @@ last_motified_at:
 <summary>문제 원본</summary>
 <div markdown="1">       
 
-### 문제 설명
+**문제 설명**
+
 주차장의 요금표와 차량이 들어오고(입차) 나간(출차) 기록이 주어졌을 때, 차량별로 주차 요금을 계산하려고 합니다. 아래는 하나의 예시를 나타냅니다.
 
 - **요금표**
@@ -87,7 +88,8 @@ last_motified_at:
 <br/>
 <br/>
 
-### 제한사항
+**제한사항**
+
 - `fees`의 길이 = 4
     - fees[0] = `기본 시간(분)`
     - 1 ≤ fees[0] ≤ 1,439
@@ -218,13 +220,14 @@ a = sorted(a)  # 정렬된 리스트 반환
 - `reverse` : True면 내림차순 (default = False)
 
 **List**
+
 2차원 리스트에서 특정 값 기준으로 정렬하고 싶은 경우
 
-```py
-arr.sort(key=lambda x:x[0])  # 첫번째 값 기준
-arr.sort(key=lambda x:x[1])  # 두번째 값 기준
-arr.sort(key=lambda x:(x[0], -x[2]))  # 첫번째 값 기준으로 오름차순 정렬, 세번째 값 기준으로 내림차순 정렬
-```
+    ```py
+    arr.sort(key=lambda x:x[0])  # 첫번째 값 기준
+    arr.sort(key=lambda x:x[1])  # 두번째 값 기준
+    arr.sort(key=lambda x:(x[0], -x[2]))  # 첫번째 값 기준으로 오름차순 정렬, 세번째 값 기준으로 내림차순 정렬
+    ```
 
 <br/>
 <br/>
